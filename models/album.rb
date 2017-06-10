@@ -14,11 +14,11 @@ class Album
 
   def stock_check()
     if @stock >= 15
-      return 'high'
+      return 'High'
     elsif (5..14).include?(@stock)
-      return 'medium'
+      return 'Medium'
     elsif @stock < 5
-      return 'low'
+      return 'Low'
     end
   end
 
@@ -60,6 +60,13 @@ class Album
   def self.delete_all()
     sql = "DELETE FROM albums ;"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM albums WHERE id = #{id} ;"
+    album = SqlRunner.run(sql)
+    result = Album.new(album.first())
+    return result
   end
 
 end

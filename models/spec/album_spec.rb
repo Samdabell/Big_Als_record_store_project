@@ -25,15 +25,15 @@ class TestAlbum < MiniTest::Test
   end
 
   def test_low_stock
-    assert_equal('low', @album1.stock_check)
+    assert_equal('Low', @album1.stock_check)
   end
 
   def test_medium_stock
-    assert_equal('medium', @album2.stock_check)
+    assert_equal('Medium', @album2.stock_check)
   end
 
   def test_high_stock
-    assert_equal('high', @album3.stock_check)
+    assert_equal('High', @album3.stock_check)
   end
 
 
