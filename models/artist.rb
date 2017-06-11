@@ -13,7 +13,7 @@ class Artist
   def albums
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
     albums = SqlRunner.run(sql)
-    result = albums.mao { |album| Album.new(album) }
+    result = albums.map { |album| Album.new(album) }
     return result
   end
 
@@ -45,6 +45,13 @@ class Artist
   def self.delete_all()
     sql = "DELETE FROM artists ;"
     SqlRunner.run(sql)
+  end
+
+  def self.find(id)
+    sql = "SELECT * FROM artists WHERE id = #{id} ;"
+    artist = SqlRunner.run(sql)
+    result = Artist.new(artist.first())
+    return result
   end
 
 end
