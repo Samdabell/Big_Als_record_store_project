@@ -1,5 +1,5 @@
-<form action="/albums/<%= @album.id %>" method="post">
-  
+<form class="show" action="/albums/<%= @album.id %>" method="post">
+  <div>
   <label for="title">Title:</label>
   <input type="text" id="title" name="title" value="<%=@album.title%>"><br>
 
@@ -32,6 +32,6 @@
   <label for="artwork">Artwork URL:</label>
   <input type="text" id="artwork" name="artwork" value="<%=@album.artwork%>"><br>  
 
-  <input class="button" type="submit" value="Edit Album"><br>
-
+  <input  type="submit" value="Edit Album"><br>
+</div>
 </form>

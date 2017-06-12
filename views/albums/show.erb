@@ -1,12 +1,9 @@
-<h2>Album Information</h2>
+<h2 class="page_title">Album Information</h2>
 
 
-<div>
-  <div>
-    <div>
-      <img src="<%= @album.artwork %>" alt="Album Artwork">
-    </div>
-    <div>
+
+  <div class="show">
+    <div class="cell2">
       <p>Title: <%= @album.title %></p>
       <p>Artist: <a href="/artists/<%= @album.artist.id %>"><%= @album.artist.name %></a></p>
       <p>Genre: <%= @album.genre %></p>
@@ -16,12 +13,15 @@
       <p>Buy Price: £<%= @album.buy_price %></p>
       <p>Sell Price: £<%= @album.sell_price %></p>
       <p>Markup: £<%= @album.markup %></p>
+      <p><a href="/albums/<%=@album.id%>/edit">Edit Album</a></p>
+
+      <form action="/albums/<%=@album.id%>/delete" method="post">
+        <input type="submit" value="Remove Album">
+      </form>
+    </div>
+    <div class="cell2">
+      <img id="artwork" src="<%= @album.artwork %>" alt="Album Artwork">
     </div>
   </div>
-</div>
 
-<p><a href="/albums/<%=@album.id%>/edit">Edit Album</a></p>
 
-<form action="/albums/<%=@album.id%>/delete" method="post">
-  <input type="submit" value="Remove Album">
-</form>

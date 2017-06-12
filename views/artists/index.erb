@@ -1,12 +1,19 @@
-<h2>Artists</h2>
+<h2 class="page_title">Artists</h2>
 
-<a href="/artists/new">Add new artist</a>
+<a class="add-link"  href="/artists/new">Add new artist</a>
 
-<% for artist in @artists %>
-<p>Name: <a href="artists/<%= artist.id %>"><%= artist.name %></a></p>
-<p>Albums in stock:<br> <% for album in artist.albums%>
- <a href="albums/<%= album.id %>"><%= album.title %></a><br>
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Albums in Stock</th>
+  </tr>
+  <% for artist in @artists %>
+  <tr>
+    <td><a href="artists/<%= artist.id %>"><%= artist.name %></a></td>
+    <td><% for album in artist.albums%>
+      <a href="albums/<%= album.id %>"><%= album.title %></a><br>
+      <%end%>
+    </td>
+  </tr>
   <%end%>
-</p>
-<hr />
-<%end%>
+</table>
