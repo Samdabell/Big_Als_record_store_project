@@ -5,6 +5,8 @@
 <% for album in @albums %>
 <p>Title: <a href="albums/<%= album.id %>"><%= album.title %></a></p>
 <p>Artist: <a href="artists/<%= album.artist.id %>"><%= album.artist.name %></a></p>
+<p>Genre: <%= album.genre %></p>
 <p>Stock Level: <%= album.stock_check %></p>
+<p>Markup: £<%= album.markup %></p>
 <hr />
 <%end%>

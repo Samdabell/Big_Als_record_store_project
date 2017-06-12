@@ -22,7 +22,12 @@ artist3.save()
 album1 = Album.new({
   'title' => 'How Strange, Innocence',
   'artist_id' => artist1.id,
-  'stock' => 5
+  'stock' => 5,
+  'genre' => 'Post-rock',
+  'year' => 2000,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/8/89/How_strange%2C_innocence_re-release_cover.jpg'
   })
 
 album1.save()
@@ -30,7 +35,12 @@ album1.save()
 album2 = Album.new({
   'title' => 'Those Who Tell the Truth Shall Die, Those Who Tell the Truth Shall Live Forever',
   'artist_id' => artist1.id,
-  'stock' => 7
+  'stock' => 7,
+  'genre' => 'Post-rock',
+  'year' => 2001,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/f/f4/Those_who_tell_the_truth_shall_die.jpg'
   })
 
 album2.save()
@@ -38,7 +48,12 @@ album2.save()
 album3 = Album.new({
   'title' => 'The Earth is Not a Cold Dead Place',
   'artist_id' => artist1.id,
-  'stock' => 16
+  'stock' => 16,
+  'genre' => 'Post-rock',
+  'year' => 2003,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/f/f9/The_earth_is_not_a_cold_dead_place.jpg'
   })
 
 album3.save()
@@ -46,7 +61,12 @@ album3.save()
 album4 = Album.new({
   'title' => 'The Rescue',
   'artist_id' => artist1.id,
-  'stock' => 2
+  'stock' => 2,
+  'genre' => 'Post-rock',
+  'year' => 2005,
+  'buy_price' => 10,
+  'sell_price' => 20,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/f/fa/Eitsrescuealbum.jpg'
   })
 
 album4.save()
@@ -54,7 +74,12 @@ album4.save()
 album5 = Album.new({
   'title' => 'All of a Sudden I Miss Everyone',
   'artist_id' => artist1.id,
-  'stock' => 12
+  'stock' => 12,
+  'genre' => 'Post-rock',
+  'year' => 2007,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/b/bd/AllofaSudden.jpg'
   })
 
 album5.save()
@@ -62,7 +87,12 @@ album5.save()
 album6 = Album.new({
   'title' => 'Take Care, Take Care, Take Care',
   'artist_id' => artist1.id,
-  'stock' => 10
+  'stock' => 10,
+  'genre' => 'Post-rock',
+  'year' => 2011,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/b/b0/Takecare.jpg'
   })
 
 album6.save()
@@ -70,7 +100,12 @@ album6.save()
 album7 = Album.new({
   'title' => 'The Wilderness',
   'artist_id' => artist1.id,
-  'stock' => 20
+  'stock' => 20,
+  'genre' => 'Post-rock',
+  'year' => 2016,
+  'buy_price' => 6,
+  'sell_price' => 10,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/7/7a/The_Wilderness_%28Front_Cover%29.png'
   })
 
 album7.save()
@@ -78,7 +113,12 @@ album7.save()
 album8 = Album.new({
   'title' => 'Pablo Honey',
   'artist_id' => artist2.id,
-  'stock' => 3
+  'stock' => 3,
+  'genre' => 'Alternative Rock',
+  'year' => 1993,
+  'buy_price' => 2,
+  'sell_price' => 4,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/0/0f/Radiohead.pablohoney.albumart.jpg'
   })
 
 album8.save()
@@ -86,7 +126,12 @@ album8.save()
 album9 = Album.new({
   'title' => 'The Bends',
   'artist_id' => artist2.id,
-  'stock' => 8
+  'stock' => 8,
+  'genre' => 'Alternative Rock',
+  'year' => 1995,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/8/8b/Radiohead.bends.albumart.jpg'
   })
 
 album9.save()
@@ -94,7 +139,12 @@ album9.save()
 album10 = Album.new({
   'title' => 'OK Computer',
   'artist_id' => artist2.id,
-  'stock' => 18
+  'stock' => 18,
+  'genre' => 'Alternative Rock',
+  'year' => 1997,
+  'buy_price' => 6,
+  'sell_price' => 10,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/a/a1/Radiohead.okcomputer.albumart.jpg'
   })
 
 album10.save()
@@ -102,7 +152,12 @@ album10.save()
 album11 = Album.new({
   'title' => 'Kid A',
   'artist_id' => artist2.id,
-  'stock' => 17
+  'stock' => 17,
+  'genre' => 'Electronica',
+  'year' => 2000,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/b/b5/Radiohead.kida.albumart.jpg'
   })
 
 album11.save()
@@ -110,7 +165,12 @@ album11.save()
 album12 = Album.new({
   'title' => 'Amnesiac',
   'artist_id' => artist2.id,
-  'stock' => 6
+  'stock' => 6,
+  'genre' => 'Electronica',
+  'year' => 2001,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/c/c5/Radiohead.amnesiac.albumart.jpg'
   })
 
 album12.save()
@@ -118,7 +178,12 @@ album12.save()
 album13 = Album.new({
   'title' => 'Hail to the Thief',
   'artist_id' => artist2.id,
-  'stock' => 10
+  'stock' => 10,
+  'genre' => 'Alternative Rock',
+  'year' => 2003,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/6/63/Radiohead_-_Hail_to_the_Thief_-_album_cover.jpg'
   })
 
 album13.save()
@@ -126,7 +191,12 @@ album13.save()
 album14 = Album.new({
   'title' => 'In Rainbows',
   'artist_id' => artist2.id,
-  'stock' => 16
+  'stock' => 16,
+  'genre' => 'Alternative Rock',
+  'year' => 2007,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/2/2e/In_Rainbows_Official_Cover.jpg'
   })
 
 album14.save()
@@ -134,7 +204,12 @@ album14.save()
 album15 = Album.new({
   'title' => 'The King of Limbs',
   'artist_id' => artist2.id,
-  'stock' => 6
+  'stock' => 6,
+  'genre' => 'Experimental Rock',
+  'year' => 2011,
+  'buy_price' => 4,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/2/24/The_king_of_limbs.jpg'
   })
 
 album15.save()
@@ -142,7 +217,12 @@ album15.save()
 album16 = Album.new({
   'title' => 'A Moon Shaped Pool',
   'artist_id' => artist2.id,
-  'stock' => 3
+  'stock' => 3,
+  'genre' => 'Art Rock',
+  'year' => 2016,
+  'buy_price' => 6,
+  'sell_price' => 10,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/c/c1/A_Moon_Shaped_Pool.jpg'
   })
 
 album16.save()
@@ -150,7 +230,12 @@ album16.save()
 album17 = Album.new({
   'title' => 'HEALTH',
   'artist_id' => artist3.id,
-  'stock' => 1
+  'stock' => 1,
+  'genre' => 'Noise Rock',
+  'year' => 2007,
+  'buy_price' => 3,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/7/70/HEALTH_-_Health_2007_Album_Art.jpg'
   })
 
 album17.save()
@@ -158,7 +243,12 @@ album17.save()
 album18 = Album.new({
   'title' => 'GET COLOR',
   'artist_id' => artist3.id,
-  'stock' => 4
+  'stock' => 4,
+  'genre' => 'Noise Rock',
+  'year' => 2009,
+  'buy_price' => 3,
+  'sell_price' => 7,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/4/46/GetColorAlbumCover.jpg'
   })
 
 album18.save()
@@ -166,7 +256,12 @@ album18.save()
 album19 = Album.new({
   'title' => 'DEATH MAGIC',
   'artist_id' => artist3.id,
-  'stock' => 8
+  'stock' => 8,
+  'genre' => 'Noise Rock',
+  'year' => 2015,
+  'buy_price' => 5,
+  'sell_price' => 10,
+  'artwork' => 'https://upload.wikimedia.org/wikipedia/en/5/5d/HEALTH_-_Death_Magic.png'
   })
 
 album19.save()

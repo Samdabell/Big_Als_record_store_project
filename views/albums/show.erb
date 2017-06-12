@@ -1,9 +1,24 @@
 <h2>Album Information</h2>
 
-<p>Title: <%= @album.title %></p>
-<p>Artist: <a href="/artists/<%= @album.artist.id %>"><%= @album.artist.name %></a></p>
-<p>Stock Level: <%= @album.stock_check %></p>
-<p>Albums in Stock: <%= @album.stock %></p>
+
+<div>
+  <div>
+    <div>
+      <img src="<%= @album.artwork %>" alt="Album Artwork">
+    </div>
+    <div>
+      <p>Title: <%= @album.title %></p>
+      <p>Artist: <a href="/artists/<%= @album.artist.id %>"><%= @album.artist.name %></a></p>
+      <p>Genre: <%= @album.genre %></p>
+      <p>Release Year: <%= @album.year %></p>
+      <p>Stock Level: <%= @album.stock_check %></p>
+      <p>Albums in Stock: <%= @album.stock %></p>
+      <p>Buy Price: £<%= @album.buy_price %></p>
+      <p>Sell Price: £<%= @album.sell_price %></p>
+      <p>Markup: £<%= @album.markup %></p>
+    </div>
+  </div>
+</div>
 
 <p><a href="/albums/<%=@album.id%>/edit">Edit Album</a></p>
 

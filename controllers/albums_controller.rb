@@ -32,7 +32,7 @@ end
 
 post '/albums/:id' do
   @album = Album.find(params[:id])
-  @album.update
+  @album.update(params)
   redirect to "albums/#{params[:id]}"
 end
 

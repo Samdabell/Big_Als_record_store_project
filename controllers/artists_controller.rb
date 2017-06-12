@@ -30,7 +30,7 @@ end
 
 post '/artists/:id' do
   @artist = Artist.find(params[:id])
-  @artist.update
+  @artist.update(params)
   redirect to "artists/#{params[:id]}"
 end
 

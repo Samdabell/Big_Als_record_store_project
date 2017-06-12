@@ -3,13 +3,22 @@ require_relative ('./artist')
 
 class Album
 
-  attr_accessor :id, :title, :artist_id, :stock
+  attr_accessor :id, :title, :artist_id, :stock, :genre, :year, :buy_price, :sell_price, :artwork
 
   def initialize(options)
     @id = options['id'].to_i
     @title = options['title']
     @artist_id = options['artist_id'].to_i
     @stock = options['stock'].to_i
+    @genre = options['genre']
+    @year = options['year'].to_i
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
+    @artwork = options['artwork']
+  end
+
+  def markup
+    return sell_price - buy_price
   end
 
   def stock_check()
@@ -31,7 +40,7 @@ class Album
   end
 
   def save()
-    sql = "INSERT INTO albums (title, artist_id, stock) VALUES ('#{@title}', '#{@artist_id}', '#{@stock}') RETURNING * ;  "
+    sql = "INSERT INTO albums (title, artist_id, stock, genre, year, buy_price, sell_price, artwork) VALUES ('#{@title}', '#{@artist_id}', '#{@stock}', '#{@genre}', '#{@year}', '#{@buy_price}', '#{@sell_price}', '#{@artwork}') RETURNING * ;  "
     album = SqlRunner.run(sql)
     @id = album[0]['id'].to_i
   end
@@ -40,7 +49,12 @@ class Album
     sql = "UPDATE albums SET
     title = '#{options['title']}', 
     artist_id = '#{options['artist_id']}',
-    stock = '#{options['stock']}'
+    stock = '#{options['stock']}',
+    genre = '#{options['genre']}',
+    year = '#{options['year']}',
+    buy_price = '#{options['buy_price']}',
+    sell_price = '#{options['sell_price']}',
+    artwork = '#{options['artwork']}'
     WHERE id = '#{options['id']}' ;"
     SqlRunner.run(sql)
   end
