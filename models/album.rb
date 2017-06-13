@@ -40,18 +40,22 @@ class Album
     return artist
   end
 
+  def sanitise(string)
+    string.gsub(/'/, "''")
+  end
+
   def save()
-    sql = "INSERT INTO albums (title, artist_id, stock, genre, year, buy_price, sell_price, artwork, spotify) VALUES ('#{@title}', '#{@artist_id}', '#{@stock}', '#{@genre}', '#{@year}', '#{@buy_price}', '#{@sell_price}', '#{@artwork}', '#{@spotify}') RETURNING * ;  "
+    sql = "INSERT INTO albums (title, artist_id, stock, genre, year, buy_price, sell_price, artwork, spotify) VALUES ('#{sanitise(@title)}', '#{@artist_id}', '#{@stock}', '#{sanitise(@genre)}', '#{@year}', '#{@buy_price}', '#{@sell_price}', '#{@artwork}', '#{@spotify}') RETURNING * ;  "
     album = SqlRunner.run(sql)
     @id = album[0]['id'].to_i
   end
 
   def update(options)
     sql = "UPDATE albums SET
-    title = '#{options['title']}', 
+    title = '#{sanitise(options['title'])}', 
     artist_id = '#{options['artist_id']}',
     stock = '#{options['stock']}',
-    genre = '#{options['genre']}',
+    genre = '#{sanitise(options['genre'])}',
     year = '#{options['year']}',
     buy_price = '#{options['buy_price']}',
     sell_price = '#{options['sell_price']}',

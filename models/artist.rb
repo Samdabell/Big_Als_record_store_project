@@ -11,6 +11,10 @@ class Artist
     @spotify = options['spotify']
   end
 
+  def sanitise(string)
+    string.gsub(/'/, "''")
+  end
+
   def albums
     sql = "SELECT * FROM albums WHERE artist_id = #{@id}"
     albums = SqlRunner.run(sql)
@@ -19,14 +23,14 @@ class Artist
   end
 
   def save()
-    sql = "INSERT INTO artists (name, spotify) VALUES ('#{@name}', '#{@spotify}') RETURNING * ;  "
+    sql = "INSERT INTO artists (name, spotify) VALUES ('#{sanitise(@name)}', '#{@spotify}') RETURNING * ;  "
     artist = SqlRunner.run(sql)
     @id = artist[0]['id'].to_i
   end
 
   def update(options)
     sql = "UPDATE artists SET
-    name = '#{options['name']}',
+    name = '#{sanitise(options['name'])}',
     spotify = '#{options['spotify']}'
     WHERE id = '#{options['id']}' ;"
     SqlRunner.run(sql)
