@@ -30,8 +30,11 @@
   <input type="number" id="sell-price" name="sell_price" value="<%=@album.sell_price%>"><br>
 
   <label for="artwork">Artwork URL:</label>
-  <input type="text" id="artwork" name="artwork" value="<%=@album.artwork%>"><br>  
+  <input type="text" id="artwork" name="artwork" value="<%=@album.artwork%>"><br>
 
-  <input  type="submit" value="Edit Album"><br>
+  <label for="spotify">Spotify Embed Code:</label>
+  <input type="text" id="spotify" name="spotify" value="<%=HTMLEntities.new.encode(@album.spotify)%>"><br>  
+
+  <input class="button" type="submit" value="Edit Album"><br>
 </div>
 </form>

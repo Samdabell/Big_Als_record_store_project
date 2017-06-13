@@ -3,7 +3,7 @@ require_relative ('./artist')
 
 class Album
 
-  attr_accessor :id, :title, :artist_id, :stock, :genre, :year, :buy_price, :sell_price, :artwork
+  attr_accessor :id, :title, :artist_id, :stock, :genre, :year, :buy_price, :sell_price, :artwork, :spotify
 
   def initialize(options)
     @id = options['id'].to_i
@@ -15,6 +15,7 @@ class Album
     @buy_price = options['buy_price'].to_i
     @sell_price = options['sell_price'].to_i
     @artwork = options['artwork']
+    @spotify = options['spotify']
   end
 
   def markup
@@ -40,7 +41,7 @@ class Album
   end
 
   def save()
-    sql = "INSERT INTO albums (title, artist_id, stock, genre, year, buy_price, sell_price, artwork) VALUES ('#{@title}', '#{@artist_id}', '#{@stock}', '#{@genre}', '#{@year}', '#{@buy_price}', '#{@sell_price}', '#{@artwork}') RETURNING * ;  "
+    sql = "INSERT INTO albums (title, artist_id, stock, genre, year, buy_price, sell_price, artwork, spotify) VALUES ('#{@title}', '#{@artist_id}', '#{@stock}', '#{@genre}', '#{@year}', '#{@buy_price}', '#{@sell_price}', '#{@artwork}', '#{@spotify}') RETURNING * ;  "
     album = SqlRunner.run(sql)
     @id = album[0]['id'].to_i
   end
@@ -54,7 +55,8 @@ class Album
     year = '#{options['year']}',
     buy_price = '#{options['buy_price']}',
     sell_price = '#{options['sell_price']}',
-    artwork = '#{options['artwork']}'
+    artwork = '#{options['artwork']}',
+    spotify = '#{options['spotify']}'
     WHERE id = '#{options['id']}' ;"
     SqlRunner.run(sql)
   end

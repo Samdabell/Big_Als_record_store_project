@@ -14,13 +14,15 @@
       <p>Sell Price: £<%= @album.sell_price %></p>
       <p>Markup: £<%= @album.markup %></p>
       <p><a href="/albums/<%=@album.id%>/edit">Edit Album</a></p>
-
       <form action="/albums/<%=@album.id%>/delete" method="post">
-        <input type="submit" value="Remove Album">
+        <input class="button" type="submit" value="Remove Album">
       </form>
     </div>
     <div class="cell2">
       <img id="artwork" src="<%= @album.artwork %>" alt="Album Artwork">
+    </div>
+    <div>
+    <%=@album.spotify%>
     </div>
   </div>
 

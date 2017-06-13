@@ -3,7 +3,8 @@ DROP TABLE IF EXISTS artists;
 
 CREATE TABLE artists (
 id SERIAL8 PRIMARY KEY,
-name VARCHAR(255)
+name VARCHAR(255),
+spotify VARCHAR(255)
 );
 
 CREATE TABLE albums (
@@ -15,5 +16,6 @@ genre VARCHAR(255),
 year INT,
 buy_price INT,
 sell_price INT,
-artwork VARCHAR(255)
+artwork VARCHAR(255),
+spotify VARCHAR(255)
 );

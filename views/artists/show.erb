@@ -13,7 +13,8 @@
     <p><a href="/artists/<%=@artist.id%>/edit">Edit Artist</a></p>
 
     <form action="/artists/<%=@artist.id%>/delete" method="post">
-      <input type="submit" value="Remove Artist (Will remove all albums by artist) ">
+      <input class="button" type="submit" value="Remove Artist (Will remove all albums by artist) ">
     </form>
   </div>
+  <div id="spotify"><%=@artist.spotify%></div>
 </div>
